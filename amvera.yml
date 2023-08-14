@@ -1,11 +1,11 @@
 meta:
-  environment: jvm
+  environment: python
   toolchain:
-    name: maven
-    version: 17
-
+    name: pip
+    version: 3.8
 build:
-  args: -Dserver.port=80 -Pproduction
-
+  requirementsPath: requirements.txt
 run:
-  jarName: bag-end.jar
+  scriptName: bot.py
+  persistenceMount: /data
+  containerPort: 80
